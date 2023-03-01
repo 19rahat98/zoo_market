@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "438107874897",
+    "project_id": "zoomarket-abb51",
+    "storage_bucket": "zoomarket-abb51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438107874897:android:914a45e8e562b11260ba70",
+        "android_client_info": {
+          "package_name": "zoo.market.io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438107874897-2gagqdag8cc6db6kgcr2p3d1m5rb30ng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "zoo.market.io",
+            "certificate_hash": "9de27c947bcd2e70c74974efdebeec6498dcf3bd"
+          }
+        },
+        {
+          "client_id": "438107874897-ioubn9togjie1p0q804stuo4ajcjm4f2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBzKnm3mvOGVZK5cpBNAr3swaAXQ7THXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438107874897-ioubn9togjie1p0q804stuo4ajcjm4f2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "438107874897-ec2n1vbcvpdjhgulmqhdljj4v5opl9c5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "zoo.market.io"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438107874897:android:676004cc20ad5a5960ba70",
+        "android_client_info": {
+          "package_name": "zoo.market.io.zoo_market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438107874897-ioubn9togjie1p0q804stuo4ajcjm4f2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBzKnm3mvOGVZK5cpBNAr3swaAXQ7THXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438107874897-ioubn9togjie1p0q804stuo4ajcjm4f2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "438107874897-ec2n1vbcvpdjhgulmqhdljj4v5opl9c5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "zoo.market.io"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
