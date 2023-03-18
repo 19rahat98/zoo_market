@@ -7,7 +7,6 @@ import 'package:zoo_market/common/services/simple_bloc_observer.dart';
 import 'package:zoo_market/feature/global_auth/presentation/cubit/global_auth_cubit.dart';
 import 'package:zoo_market/feature/sign_in/presentation/bloc/authentication/blocs.dart';
 import 'package:zoo_market/feature/sign_in/presentation/bloc/signIn_with_phone_number/signIn_with_phone_number_bloc.dart';
-import 'package:zoo_market/feature/sign_in/presentation/ui/sign_in_screen.dart';
 import 'package:zoo_market/feature/spash_page/presentation/ui/splash_screen.dart';
 
 void main() async {

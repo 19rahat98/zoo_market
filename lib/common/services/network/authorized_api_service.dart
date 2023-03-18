@@ -22,4 +22,13 @@ class AuthorizedApiService {
       },
     );
   }
+
+  /// делаем log out
+  Future<Response> userUpdate(Map<String, dynamic> data) async {
+    final client = await _httpClient;
+    return client.patch<dynamic>(
+      '/auth/user_update/',
+      data: data,
+    );
+  }
 }

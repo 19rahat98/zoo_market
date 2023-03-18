@@ -12,10 +12,13 @@ class SingInFirstStepSuccess extends SignInWithPhoneNumberState {
 
 class SingInSecondStepSuccess extends SignInWithPhoneNumberState {
   SingInSecondStepSuccess({
+    required this.phoneNumber,
     required this.credential,
   });
 
+  final String phoneNumber;
   final AuthCredential credential;
+
 }
 
 class FirstStepStarted extends SignInWithPhoneNumberState{}

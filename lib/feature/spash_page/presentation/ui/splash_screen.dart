@@ -5,7 +5,7 @@ import 'package:zoo_market/common/theme/theme.dart';
 import 'package:zoo_market/feature/global_auth/presentation/cubit/global_auth_cubit.dart';
 import 'package:zoo_market/feature/sign_in/presentation/ui/sign_in_screen.dart';
 import 'package:zoo_market/feature/success_page.dart';
-import 'package:zoo_market/feature/update_user_data.dart';
+import 'package:zoo_market/feature/user_data_update/presentation/user_data_update.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -28,7 +28,10 @@ class SplashScreen extends StatelessWidget {
           );
         }
         else if (state is CompleteRegistrationState) {
-          return const UpdateUserData();
+          return UpdateDataPage(
+            phoneNumber: state.phoneNumber,
+            isCreatedOnDb: state.isCreatedOnDb,
+          );
         }
         return const SignInScreen();
       },

@@ -24,7 +24,7 @@ class SignInWithPhoneNumber extends StatefulWidget {
   final VoidCallback? onError;
   final VoidCallback? onLoading;
   final MaskedTextController textController;
-  final Function(AuthCredential) onSuccess;
+  final Function(SuccessPhoneSignInEntity) onSuccess;
 
   @override
   State<SignInWithPhoneNumber> createState() => _SignInWithPhoneNumberState();
@@ -61,7 +61,10 @@ class _SignInWithPhoneNumberState extends State<SignInWithPhoneNumber> {
             }
           });
         } else if (state is SingInSecondStepSuccess) {
-          widget.onSuccess.call(state.credential);
+          widget.onSuccess.call(SuccessPhoneSignInEntity(
+            state.credential,
+            state.phoneNumber,
+          ));
         } else if (state is LoggedOutFromPhoneVerificationState) {
           widget.onError?.call();
         }
@@ -117,4 +120,11 @@ class _SignInWithPhoneNumberState extends State<SignInWithPhoneNumber> {
       ),
     );
   }
+}
+
+class SuccessPhoneSignInEntity {
+  final AuthCredential credential;
+  final String phoneNUmber;
+
+  SuccessPhoneSignInEntity(this.credential, this.phoneNUmber);
 }

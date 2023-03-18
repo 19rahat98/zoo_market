@@ -26,7 +26,7 @@ class GlobalAuthCubit extends Cubit<GlobalAuthState> {
         if (userData.isFill ?? false) {
           emit(SuccessAuthState(userData));
         } else {
-          emit(CompleteRegistrationState(true));
+          emit(CompleteRegistrationState(true, ''));
         }
       } else {
         emit(LogOutState());
@@ -45,10 +45,11 @@ class GlobalAuthCubit extends Cubit<GlobalAuthState> {
     emit(LogOutState());
   }
 
-  void setUpdateUserData({bool isCreatedOnDb = true, String? uid}) {
+  void setUpdateUserData(String phoneNumber, {bool isCreatedOnDb = true, String? uid}) {
     emit(
       CompleteRegistrationState(
         isCreatedOnDb,
+        phoneNumber,
         uid: uid,
       ),
     );

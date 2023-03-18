@@ -8,8 +8,16 @@ class LogOut extends AuthenticationEvent {}
 
 class LoggedIn extends AuthenticationEvent {
   final AuthCredential credential;
+  final String phoneNumber;
 
-  LoggedIn({required this.credential});
+  LoggedIn({
+    required this.credential,
+    required this.phoneNumber,
+  });
 }
 
-class SignToken extends AuthenticationEvent {}
+class SignToken extends AuthenticationEvent {
+  final String phoneNumber;
+
+  SignToken(this.phoneNumber);
+}

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zoo_market/common/services/core_common_constant.dart';
 import 'package:zoo_market/feature/sign_in/presentation/bloc/signIn_with_phone_number/signIn_with_phone_number_event.dart';
 import 'package:zoo_market/feature/sign_in/presentation/bloc/signIn_with_phone_number/signIn_with_phone_number_state.dart';
 
@@ -10,6 +11,7 @@ class SignInWithPhoneNumberBloc
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   String? _verificationId;
+  String _phoneNumber = CoreConstant.empty;
 
   @override
   Stream<SignInWithPhoneNumberState> mapEventToState(event) async* {
@@ -18,7 +20,7 @@ class SignInWithPhoneNumberBloc
       yield LoggedOutFromPhoneVerificationState();
     }
     if (event is SignInWithPhoneNumberFirstStep) {
-      //yield FirstStepStarted();
+      _phoneNumber = event.phoneNumber;
       try {
         verificationCompleted(AuthCredential phoneAuthCredential) {
           add(PhoneVerificationCompletedEvent(phoneAuthCredential));
@@ -52,7 +54,7 @@ class SignInWithPhoneNumberBloc
     }
 
     _signInWithCredential(AuthCredential credential) async* {
-      yield SingInSecondStepSuccess(credential: credential);
+      yield SingInSecondStepSuccess(credential: credential, phoneNumber:_phoneNumber);
     }
 
     if (event is SignInWithPhoneNumberSecondStep) {

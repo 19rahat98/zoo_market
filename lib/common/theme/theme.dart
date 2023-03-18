@@ -7,6 +7,7 @@ class AppColors {
   static const monoBrown = Color(0xFF7D291F);
   static const mainOrange = Color(0xFFED8E22);
   static const monoGray2 = Color(0xFFF6F6F6);
+  static const monoGray5 = Color(0xFFE0E0E0);
 }
 
 class AppIcons {
@@ -56,7 +57,7 @@ class AppTextStyle {
 
   static const textInput =  TextStyle(
     color: AppColors.black,
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: FontWeight.w400,
     fontFamily: 'CeraPro',
   );

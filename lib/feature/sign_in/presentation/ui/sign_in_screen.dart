@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -32,15 +31,16 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return ScreenWrapper(
       bottom: false,
-      body:  BlocListener<AuthBloc, AuthenticationState>(
+      body: BlocListener<AuthBloc, AuthenticationState>(
         listener: (context, state) {
           if (state is CredentialSuccess) {
-            _authBloc.add(SignToken());
+            _authBloc.add(SignToken(state.phoneNumber));
           } else if (state is SetUserDataState) {
             context.read<GlobalAuthCubit>().setUpdateUserData(
-              uid: state.uid,
-              isCreatedOnDb: state.hasUser,
-            );
+                  state.phoneNumber,
+                  uid: state.uid,
+                  isCreatedOnDb: state.hasUser,
+                );
           } else if (state is LoginSuccessState) {
             context.read<GlobalAuthCubit>().getUserData();
           }
@@ -113,10 +113,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     child: SignInWithPhoneNumber(
                       onLoading: () {},
-                      onSuccess: (value) =>
-                          _authBloc.add(
-                            LoggedIn(credential: value),
-                          ),
+                      onSuccess: (value) => _authBloc.add(
+                        LoggedIn(
+                          credential: value.credential,
+                          phoneNumber: value.phoneNUmber,
+                        ),
+                      ),
                       onError: () => _authBloc.add(LogOut()),
                       textController: _phoneNumberController,
                     ),

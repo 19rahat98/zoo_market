@@ -8,9 +8,11 @@ class GlobalAuthInitial extends GlobalAuthState {}
 class CompleteRegistrationState extends GlobalAuthState {
   final String? uid;
   final bool isCreatedOnDb;
+  final String phoneNumber;
 
   CompleteRegistrationState(
-    this.isCreatedOnDb, {
+    this.isCreatedOnDb,
+    this.phoneNumber, {
     this.uid,
   });
 }

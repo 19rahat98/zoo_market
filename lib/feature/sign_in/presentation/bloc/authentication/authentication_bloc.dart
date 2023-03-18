@@ -29,7 +29,7 @@ class AuthBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
         await _firebaseAuth.signInWithCredential(event.credential);
         token = await _firebaseAuth.currentUser!.getIdToken();
         _personalSecureDataRepository.setAccessToken(token!);
-        yield CredentialSuccess(token: token!);
+        yield CredentialSuccess(token: token!, phoneNumber: event.phoneNumber);
       } catch (error) {
         yield AuthenticationFail(errorMessage: error.hashCode);
       }
@@ -56,8 +56,9 @@ class AuthBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
           yield LoginSuccessState();
         } else {
           yield SetUserDataState(
-            hasUser: false,
             uid: token,
+            hasUser: false,
+            phoneNumber: event.phoneNumber,
           );
         }
       } catch (error) {

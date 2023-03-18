@@ -170,7 +170,7 @@ class _AppLabelTextFieldWidgetState extends State<AppLabelTextFieldWidget> {
                       : Colors.white,
                   border: Border.all(
                     color: (widget.errorMessage?.isEmpty ?? true)
-                        ? Colors.white
+                        ? AppColors.monoGray5
                         : AppColors.error,
                   ),
                   borderRadius: widget.borderRadius ??
@@ -219,7 +219,7 @@ class _AppLabelTextFieldWidgetState extends State<AppLabelTextFieldWidget> {
                       maxWidth: 40,
                     ),
                     hintText: widget.hintTextValue,
-                    hintStyle: AppTextStyle.textInput.copyWith(
+                    hintStyle: AppTextStyle.textMob.copyWith(
                       color: AppColors.monoGray,
                     ),
                     labelText: widget.label,

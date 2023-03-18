@@ -12,6 +12,8 @@ dependencies:
 
   #state manager
   flutter_bloc: ^7.2.0
+  equatable: ^2.0.5
+
 
   # di
   get_it: ^7.2.0
@@ -19,7 +21,9 @@ dependencies:
   #ui
   flutter_svg: ^1.1.6
   cupertino_icons: ^1.0.2
+  flutter_switch: ^0.3.2
   flutter_masked_text2: ^0.9.1
+  mask_text_input_formatter: ^2.4.0
   pinput: ^1.2.0
 
   #store
@@ -32,6 +36,7 @@ dependencies:
 
   #network
   dio: ^4.0.6
+  pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
   flutter_test:
